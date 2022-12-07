@@ -1,10 +1,19 @@
 import React from 'react';
+import SinglePlayer from '../SinglePlayer/SinglePlayer';
 import './Players.css';
 
-const Players = () => {
+const Players = ({players}) => {
   return (
-    <div>
-      <h1>I am from players</h1>
+    <div className='cart-container'>
+      {
+        players.map((player) => (
+          <SinglePlayer
+           player={player} 
+           key={player?.idPlayer}
+           >
+           </SinglePlayer>
+        ))
+      }
     </div>
   );
 };
